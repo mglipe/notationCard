@@ -1,0 +1,23 @@
+.container-card{
+    background: chartreuse;
+    margin-top: 5em;
+    margin-right: 2em;
+
+    padding-bottom: 3em;
+    border-radius: .8em;
+}
+
+.container-card-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-card-titulo{
+    margin-left: 50%;
+}
+
+.container-card-descricao{
+    margin-left: 10%;
+}

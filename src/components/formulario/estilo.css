@@ -1,0 +1,29 @@
+.container-form{
+    display: flex;
+    align-items: flex-start;
+
+    margin-top: 2em;
+}
+
+.container-form-div{
+    display: flex;
+    flex-direction: column;
+
+    width: 400px;
+    margin-left: 30%;
+
+}
+
+.container-form-input{
+    margin-bottom: 1em;
+}
+
+.container-form-textarea{
+    border-radius: .8em;
+    margin-bottom: .7em;
+}
+
+.container-form-button{
+    width: 100px;
+    margin-left: 300px;
+}
