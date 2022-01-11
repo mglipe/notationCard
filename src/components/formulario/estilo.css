@@ -5,6 +5,11 @@
     margin-top: 2em;
 }
 
+.container-form-select{
+    position: relative;
+    left: 2%;
+}
+
 .container-form-div{
     display: flex;
     flex-direction: column;
@@ -27,3 +32,9 @@
     width: 100px;
     margin-left: 300px;
 }
+
+.container-form-categoria{
+    position: relative;
+    left: 34%;
+}
+

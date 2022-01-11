@@ -1,5 +1,5 @@
 .container-card{
-    background: chartreuse;
+    background: rgb(127, 123, 163);
     margin-top: 5em;
     margin-right: 2em;
 
@@ -16,6 +16,10 @@
 
 .container-card-titulo{
     margin-left: 50%;
+}
+
+.delete-card{
+    cursor: pointer;
 }
 
 .container-card-descricao{
