@@ -12,6 +12,7 @@ class ListaDeCard extends Component{
                         indice={index}
                         titulo={card.titulo}
                         descricao={card.descricao}
+                        categoria={card.categoria}
                         apagarCard={this.props.apagarCard}/>
                         </li>
                 })}
