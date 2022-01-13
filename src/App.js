@@ -1,4 +1,6 @@
 import React,{Component} from "react";
+import ArrayDeCard from "./components/datas/ArrayDeCard";
+import Categoria from "./components/datas/Categoria";
 import Formulario from "./components/formulario";
 import ListaDeCard from "./components/listadecard";
 import ListaDeCategoria from "./components/listadecategoria";
@@ -7,40 +9,25 @@ class App extends Component{
 
   constructor(){
     super();
-    this.card = [];
-    this.categoria =[];
-    this.state = {};
-  }
-
-  adicionarCard(titulo, descricao,categoria){
-    const notas = {titulo, descricao, categoria};
-    this.card.push(notas);
-    this.setState({cards: this.card});
-    console.log(this.card);
-  }
-
-  apagarCard(index){
-    this.card.splice(index, 1)
-    this.setState({cards: this.card});
-  }
-
-  adicionarCategoria(categoria){
-    this.categoria.push(categoria);
-    console.log(this.categoria);
+    this.card = new ArrayDeCard();
+    this.categoria =new Categoria();
   }
 
   render(){
     return (
       <section>
         <Formulario
-        adicionarCard={this.adicionarCard.bind(this)}/>
-        <ListaDeCard
-        card={this.card}
-        apagarCard={this.apagarCard.bind(this)}
-        />
-        <ListaDeCategoria
-        adicionarCategoria={this.adicionarCategoria.bind(this)}
-        categoria={this.categoria}/>
+        adicionarCard={this.card.adicionarCard}
+        categoria={this.categoria.categoria}/>
+        <main>
+          <ListaDeCard
+          card={this.card.card}
+          apagarCard={this.card.apagarCard}
+          />
+          <ListaDeCategoria
+          adicionarCategoria={this.categoria.adicionarCategoria}
+         />
+        </main>  
       </section>
     );
   }

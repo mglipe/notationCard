@@ -8,7 +8,7 @@ class Formulario extends Component{
         super(props);
         this.titulo = "";
         this.descricao = "";
-        this.categoria = "Sem Categoria";
+        this.categoria = "Sem categoria";
     }
 
     _handlerMudarTitulo(event){
@@ -39,6 +39,9 @@ class Formulario extends Component{
                     <select className="container-form-select"
                     onChange={this._handlerMudarCategoria.bind(this)}>
                         <option value="">Sem Categoria</option>
+                        {this.props.categoria.map((categoria, index)=>{
+                            return <option key={index}>{categoria}</option>
+                        })}
                     </select>
                     <div className="container-form-div">
                         <input

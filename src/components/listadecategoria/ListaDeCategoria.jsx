@@ -14,6 +14,7 @@ class ListaDeCategoria extends Component{
     render(){
         return(
             <div className="container-categoria">
+                
                 <input className="element-input" type="text" placeholder="categoria" onKeyUp={this._adicionarCategoria.bind(this)}></input>
             </div>
         );
