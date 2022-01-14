@@ -32,24 +32,25 @@ class Formulario extends Component{
                 </select>
                 <div className="container-form-div">
                     <input
-                    className="container-form-input"
+                    className="container-form-titulo"
                     type="text"
                     placeholder="Titulo"
                     onChange={this._handlerMudarTitulo.bind(this)}
                     />
                     <textarea
-                    className="container-form-textarea"
+                    className="container-form-descricao"
                     rows={5}
                     placeholder="Digite Aqui"
                     onChange={this._handlerMudarDescricao.bind(this)}/>
                     <button
                     className="container-form-button">criar nota</button>
                 </div>
-                <input
-                type="text"
-                className="container-form-categoria"
-                placeholder="categoria" /> 
-                   
+                <div className="container-form-categoria">
+                    <input
+                    type="text"
+                    className="container-form-categoria"
+                    placeholder="categoria" /> 
+                </div>   
             </form>
         );
     }

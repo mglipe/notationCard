@@ -1,6 +1,7 @@
 .container-form{
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    grid-template-rows: auto;
 
     margin-top: 2em;
 }
@@ -8,34 +9,87 @@
 .container-form-select{
     position: relative;
     left: 2%;
+
+    height: 15%;
+    width: 200px;
 }
 
 .container-form-div{
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     width: 400px;
-    margin-left: 30%;
+    margin-left: 16.65%;
+
+
 
 }
 
 
-.container-form-input{
+.container-form-titulo{
     margin-bottom: 1em;
+    width: 400px;
 }
 
-.container-form-textarea{
+.container-form-descricao{
     border-radius: .8em;
     margin-bottom: .7em;
+
+    width: 400px;
 }
 
 .container-form-button{
-    width: 100px;
-    margin-left: 300px;
+    width: 120px;
+    margin-left: 70.65%;
 }
 
 .container-form-categoria{
     position: relative;
     left: 34%;
 }
+
+
+@media (min-width: 500px) and (max-width: 800px){
+
+
+    .container-form-select{
+        position: relative;
+        left: 2%;
+
+        width: 100px;
+        margin-bottom: 1.5em;
+    }
+
+    .container-form-div{
+        display: flex;
+        align-items: flex-start;
+
+        width: 49.95%;
+
+    }
+
+    .container-form-titulo{
+        width: 100px;
+    }
+
+    .container-form-descricao{
+        width: 100px;
+    }
+    .container-form-button{
+        position: relative;
+        right: 50%;
+
+        width: 90px;
+
+        margin-bottom: 2em;
+    }
+
+    .container-form-categoria{
+       width: 100px;
+       position: relative;
+       left: 20%;
+    }
+}
+
 
