@@ -1,36 +1,33 @@
 import React,{Component} from "react";
+import ArrayDeCard from "./components/datas/ArrayDeCard";
+import Categoria from "./components/datas/Categoria";
 import Formulario from "./components/formulario";
 import ListaDeCard from "./components/listadecard";
+import ListaDeCategoria from "./components/listadecategoria";
 
 class App extends Component{
 
   constructor(){
     super();
-    this.card = [];
-    this.state = {};
-  }
-
-  adicionarCard(titulo, descricao){
-    const notas = {titulo, descricao};
-    this.card.push(notas);
-    this.setState({cards: this.card});
-    console.log(this.card);
-  }
-
-  apagarCard(index){
-    this.card.splice(index, 1)
-    this.setState({cards: this.card});
+    this.card = new ArrayDeCard();
+    this.categoria =new Categoria();
   }
 
   render(){
     return (
       <section>
         <Formulario
-        adicionarCard={this.adicionarCard.bind(this)}/>
-        <ListaDeCard
-        card={this.card}
-        apagarCard={this.apagarCard.bind(this)}
-        />
+        adicionarCard={this.card.adicionarCard.bind(this.card)}
+        categoria={this.categoria.categoria}/>
+        <main>
+          <ListaDeCard
+          card={this.card.card}
+          apagarCard={this.card.apagarCard.bind(this.card)}
+          />
+          <ListaDeCategoria
+          adicionarCategoria={this.categoria.adicionarCategoria.bind(this.categoria)}
+         />
+        </main>  
       </section>
     );
   }

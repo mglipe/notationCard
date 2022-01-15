@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import "./estilo.css";
+import {Button} from 'reactstrap';
 
 class Formulario extends Component{
 
@@ -7,6 +8,7 @@ class Formulario extends Component{
         super(props);
         this.titulo = "";
         this.descricao = "";
+        this.categoria = "Sem categoria";
     }
 
     _handlerMudarTitulo(event){
@@ -19,39 +21,44 @@ class Formulario extends Component{
         console.log(event.target.value);
     }
 
+    _handlerMudarCategoria(event){
+        this.categoria = event.target.value;
+    }
+
     adicionarCard(event){
         event.preventDefault();
-        this.props.adicionarCard(this.titulo, this.descricao);
+        this.props.adicionarCard(this.titulo, this.descricao, this.categoria);
     }
+
+
+
 
     render(){
         return(
-            <form className="container-form" onSubmit={this.adicionarCard.bind(this)}>
-                <select className="container-form-select">
-                    <option value="">Sem Categoria</option>
-                </select>
-                <div className="container-form-div">
-                    <input
-                    className="container-form-titulo"
-                    type="text"
-                    placeholder="Titulo"
-                    onChange={this._handlerMudarTitulo.bind(this)}
-                    />
-                    <textarea
-                    className="container-form-descricao"
-                    rows={5}
-                    placeholder="Digite Aqui"
-                    onChange={this._handlerMudarDescricao.bind(this)}/>
-                    <button
-                    className="container-form-button">criar nota</button>
-                </div>
-                <div className="container-form-categoria">
-                    <input
-                    type="text"
-                    className="container-form-categoria"
-                    placeholder="categoria" /> 
-                </div>   
-            </form>
+                <form className="container-form" onSubmit={this.adicionarCard.bind(this)}>
+                    <select className="container-form-select"
+                    onChange={this._handlerMudarCategoria.bind(this)}>
+                        <option value="">Sem Categoria</option>
+                        {this.props.categoria.map((categoria, index)=>{
+                            return <option key={index}>{categoria}</option>
+                        })}
+                    </select>
+                    <div className="container-form-div">
+                        <input
+                        className="container-form-titulo"
+                        type="text"
+                        placeholder="Titulo"
+                        onChange={this._handlerMudarTitulo.bind(this)}
+                        />
+                        <textarea
+                        className="container-form-descricao"
+                        rows={5}
+                        placeholder="Digite Aqui"
+                        onChange={this._handlerMudarDescricao.bind(this)}/>
+                        <Button
+                        className="container-form-button" color="danger">criar nota</Button>
+                    </div>
+                </form>
         );
     }
 }

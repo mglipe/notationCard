@@ -14,6 +14,7 @@ class Card extends Component{
             <section className='container-card'>
                 <header className='container-card-header'>
                     <h3 className='container-card-titulo'>{this.props.titulo}</h3>
+                    <h4 className='container-card-categoria'>{this.props.categoria}</h4>
                     <DeleteCard
                     className='delete-card'
                     onClick={this.deleteCard.bind(this)}/>
